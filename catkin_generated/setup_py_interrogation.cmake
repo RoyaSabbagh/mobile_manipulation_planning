@@ -1,0 +1,6 @@
+set(pam_SETUP_PY_VERSION "0.0.0")
+set(pam_SETUP_PY_SCRIPTS "")
+set(pam_SETUP_PY_PACKAGES "pam")
+set(pam_SETUP_PY_PACKAGE_DIRS "src/pam")
+set(pam_SETUP_PY_MODULES "")
+set(pam_SETUP_PY_MODULE_DIRS "")

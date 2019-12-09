@@ -1,0 +1,89 @@
+<!-- launch.launch -->
+
+<launch>
+
+  <arg name="width" default="6"/>
+  <arg name="length" default="5"/>
+  <param name="room_length" value="$(arg length)" />
+  <param name="room_width" value="$(arg width)" />
+
+  <arg name="model" default="$(find pam)/rviz/robot.urdf"/>
+  #<arg name="rvizconfig" default="$(find pam)/rviz/rviz.rviz" />
+  <arg name="gui" default="true" />
+  <param name="use_gui" value="$(arg gui)"/>
+
+   <node pkg="tf" type="static_transform_publisher" name="map2frame_0"
+    args="0.0 0.0 0.0 0 0 0 1 map frame_0 100" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+
+  <param name="/robot_description1" command="$(find xacro)/xacro --inorder $(find pam)/rviz/robot.urdf" />
+  <node name="Visual" pkg="pam" type="Visual.py" />
+
+
+  <node name="robot_state_publisher1" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/joint_states1"/>
+    <remap from="robot_description" to="/robot_description1"/>
+  </node>
+
+
+  <param name="/robot_description2" command="$(find xacro)/xacro --inorder $(find pam)/rviz/walker.urdf" />
+  <node name="Visual_walker" pkg="pam" type="Visual_walker.py" />
+
+
+  <node name="robot_state_publisher2" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/joint_states2"/>
+    <remap from="robot_description" to="/robot_description2"/>
+  </node>
+
+  <param name="/robot_description22" command="$(find xacro)/xacro --inorder $(find pam)/rviz/walker_goal.urdf" />
+
+
+  <node name="robot_state_publisher22" pkg="robot_state_publisher" type="state_publisher" >
+  <remap from="joint_states" to="/joint_states22"/>
+  <remap from="robot_description" to="/robot_description22"/>
+  </node>
+
+
+  <param name="/robot_description3" command="$(find xacro)/xacro --inorder $(find pam)/rviz/bed.urdf" />
+  <node name="Visual_obs" pkg="pam" type="Visual_obs.py" />
+
+
+  <node name="robot_state_publisher3" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/joint_states3"/>
+    <remap from="robot_description" to="/robot_description3"/>
+  </node>
+
+  <param name="/robot_description4" command="$(find xacro)/xacro --inorder $(find pam)/rviz/wall.urdf.xacro  length:=$(arg length) width:=$(arg width) " />
+
+  <node name="robot_state_publisher4" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/joint_states4"/>
+    <remap from="robot_description" to="/robot_description4"/>
+  </node>
+
+
+  <param name="/robot_description5" command="$(find xacro)/xacro --inorder $(find pam)/rviz/blue_chair.urdf" />
+
+  <node name="robot_state_publisher5" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/joint_states5"/>
+    <remap from="robot_description" to="/robot_description5"/>
+  </node>
+
+  <param name="/robot_description6" command="$(find xacro)/xacro --inorder $(find pam)/rviz/gray_chair.urdf" />
+
+  <node name="robot_state_publisher6" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/joint_states6"/>
+    <remap from="robot_description" to="/robot_description6"/>
+  </node>
+
+  <param name="/robot_description7" command="$(find xacro)/xacro --inorder $(find pam)/rviz/cart.urdf" />
+
+  <node name="robot_state_publisher7" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/joint_states7"/>
+    <remap from="robot_description" to="/robot_description7"/>
+  </node>
+
+  <node  pkg="pam" type="camera_to_frame0.py" name="aruco_calibration_tf_publisher" output="screen" />
+
+
+</launch>

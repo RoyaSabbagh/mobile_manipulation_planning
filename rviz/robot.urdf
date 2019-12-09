@@ -1,0 +1,106 @@
+<robot name="AGV">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.09" radius="0.165"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0.065"/>
+            <material name="green">
+                <color rgba="0 0.8 0 0.6"/>
+            </material>
+        </visual>
+    </link>
+    
+    <link name="gripper_link1">
+        <visual>
+            <geometry>
+                <box size="0.14 0.03 0.03"/>
+            </geometry>
+            <origin rpy="0 1.57079633 0" xyz="0.05 0 0.175"/>
+            <material name="grey2">
+                <color rgba="0.55 0.55 0.55 1"/>
+            </material>
+        </visual>
+    </link>
+    
+    <link name="gripper_link2">
+        <visual>
+            <geometry>
+                <box size="0.25 0.03 0.03"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.16 0 0.235"/>
+            <material name="grey2">
+                <color rgba="0.55 0.55 0.55 1"/>
+            </material>
+        </visual>
+    </link>
+    
+    <link name="gripper">
+        <visual>
+            <geometry>
+                <box size="0.20 0.12 0.08"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.32 0 0.235"/>
+            <material name="grey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+    </link>
+    
+    <joint name="base_to_gripper_link1" type="fixed">
+        <parent link="base_link"/>
+        <child link="gripper_link1"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="gipper_link_to_gripper" type="fixed">
+        <parent link="gripper_link2"/>
+        <child link="gripper"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="gipper_link1_to_gripper_link2" type="fixed">
+        <parent link="gripper_link1"/>
+        <child link="gripper_link2"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <link name="pam_wheel_1">
+        <visual>
+            <geometry>
+                <cylinder length="0.03" radius="0.05"/>
+            </geometry>
+            <origin rpy="1.57079633 0 0" xyz="0 0.11 0.05"/>
+            <material name="grey">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="pam_wheel_2">
+        <visual>
+            <geometry>
+                <cylinder length="0.03" radius="0.05"/>
+            </geometry>
+            <origin rpy="1.57079633 0 0" xyz="0 -0.11 0.05"/>
+            <material name="grey"/>
+        </visual>
+    </link>
+
+    <joint name="base_to_pam_wheel1" type="fixed">
+        <parent link="base_link"/>
+        <child link="pam_wheel_1"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="base_to_pam_wheel2" type="fixed">
+        <parent link="base_link"/>
+        <child link="pam_wheel_2"/>     
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+  </robot>

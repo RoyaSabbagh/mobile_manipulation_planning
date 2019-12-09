@@ -1,0 +1,20 @@
+<!-- launch.launch -->
+
+<launch>
+    <machine name="roya-Lenovo" address="192.168.1.113" user="roya" password=" "/>
+    <env name="ROS_MASTER_URI" value="http://192.168.1.113:11311"/>
+    <env name="ROS_IP" value="192.168.1.113" />
+    <env name="ROS_HOSTNAME" value="roya-Lenovo" />
+
+
+    <include file="$(find vrpn_client_ros)/launch/sample.launch" >
+    <arg name="server" value="192.168.1.112" />
+    </include>
+
+    <node machine="roya-Lenovo" name="Feedback" type="Feedback.py" pkg="pam" output="screen" />
+
+    <node machine="roya-Lenovo" name="low_level_controller" type="low_level_controller.py" pkg="pam" output="screen" />
+
+    <node machine="roya-Lenovo" name="main" type="main.py" pkg="pam" output="screen" />
+
+</launch>

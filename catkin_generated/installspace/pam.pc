@@ -1,0 +1,8 @@
+prefix=/home/roya/catkin_ws/install
+
+Name: pam
+Description: Description of pam
+Version: 0.0.0
+Cflags: -I/home/roya/catkin_ws/install/include
+Libs: -L/home/roya/catkin_ws/install/lib -lpam
+Requires: message_generation roscpp rospy rospy std_msgs message_runtime

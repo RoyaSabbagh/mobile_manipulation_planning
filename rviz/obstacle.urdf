@@ -1,0 +1,77 @@
+<robot name="bed">
+
+  <link name="bed_base">
+
+    <inertial>
+      <mass value="70.0" />
+      <origin xyz="0.6 -1.5 0" />
+      <inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.6 -1.5 0" rpy="0 0 1.5708" />
+      <geometry>
+        <mesh filename="package://pam/rviz/bed_base.stl" scale="1.5 1.4 2"/>
+      </geometry>
+      <material name="grey">
+                <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0.6 -1.5 0" rpy="0 0 1.5708" />
+      <geometry>
+        <mesh filename="package://pam/rviz/bed_base.stl" scale="1.5 1.4 2"/>
+      </geometry>
+    </collision>
+
+  </link>
+  
+<gazebo reference="bed_base">
+    <material>Gazebo/Wood</material>	
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+ </gazebo>
+
+<joint name="bed_joint" type="fixed">
+	<parent link="bed_base"/>
+	<child link="bed_quilt"/>
+</joint>
+
+  <link name="bed_quilt">
+
+    <inertial>
+      <mass value="70.0" />
+      <origin xyz="0.6 -1.5 0.4" />
+      <inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.6 -1.5 0.4" rpy="0 0 1.5708" />
+      <geometry>
+        <mesh filename="package://pam/rviz/bed_quilt.stl" scale="1.5 1.4 2"/>
+      </geometry> 
+      <material name="blue">
+                <color rgba="0 0.3 0.6 1"/>
+      </material>
+     </visual>
+
+    <collision>
+      <origin xyz="0.6 -1.5 0.4" rpy="0 0 1.5708" />
+      <geometry>
+        <mesh filename="package://pam/rviz/bed_quilt.stl" scale="1.5 1.4 2"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+<gazebo reference="bed_quilt">
+    <material>Gazebo/PaintedWall</material>	
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+</gazebo>
+
+  <gazebo>
+    <static>true</static>
+  </gazebo>
+</robot>

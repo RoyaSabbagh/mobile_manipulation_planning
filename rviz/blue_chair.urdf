@@ -1,0 +1,346 @@
+<robot name="blue_chair">
+    <link name="base_link_bc">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.48"/>
+            </geometry>
+            <origin rpy="1.57079633 0 0" xyz="0.24 0 0.35"/>
+            <material name="brown">
+                <color rgba="0.6 0.3 0.12 1"/>
+            </material>
+        </visual>
+    </link>
+    
+    <link name="base_link_bc1">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.51"/>
+            </geometry>
+            <origin rpy="0 1.57079633 0" xyz="0 0.26 0.37"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+    
+    <link name="base_link_bc2">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.51"/>
+            </geometry>
+            <origin rpy="0 1.57079633 0" xyz="0 -0.26 0.37"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+
+    <link name="base_link_bc12">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.51"/>
+            </geometry>
+            <origin rpy="0 1.57079633 0" xyz="0 0.26 0.25"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+    
+    <link name="base_link_bc22">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.51"/>
+            </geometry>
+            <origin rpy="0 1.57079633 0" xyz="0 -0.26 0.25"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+
+    <link name="base_link_bc13">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.36"/>
+            </geometry>
+            <origin rpy="0 1.57079633 0" xyz="0.07 0.26 0.63"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+
+    <link name="base_link_bc23">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.36"/>
+            </geometry>
+            <origin rpy="0 1.57079633 0" xyz="0.07 -0.26 0.63"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+
+    <link name="base_link_bc14">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.3"/>
+            </geometry>
+            <origin rpy="0 0.65 0" xyz="-0.15 0.26 0.5"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+    
+    <link name="base_link_bc24">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.3"/>
+            </geometry>
+            <origin rpy="0 0.65 0" xyz="-0.15 -0.26 0.5"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+
+    <link name="base_link_bc3">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.48"/>
+            </geometry>
+            <origin rpy="1.57079633 0 0" xyz="-0.24 0 0.35"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+
+    <link name="seat">
+        <visual>
+            <geometry>
+                <box size="0.54 0.48 0.1"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0.41"/>
+            <material name="blue">
+                <color rgba="0.09 0.23 0.38 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="back">
+        <visual>
+            <geometry>
+                <box size="0.51 0.48 0.1"/>
+            </geometry>
+            <origin rpy="0 1.7 0" xyz="0.23 0 0.64"/>
+            <material name="blue">
+                <color rgba="0.09 0.23 0.38 1"/>
+            </material>
+        </visual>
+    </link>
+    
+    <joint name="base_to_base_1_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="base_link_bc1"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+    
+    <joint name="base_to_base_2_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="base_link_bc2"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="base_to_base_12_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="base_link_bc12"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+    
+    <joint name="base_to_base_22_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="base_link_bc22"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="base_to_base_13_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="base_link_bc13"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+    
+    <joint name="base_to_base_23_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="base_link_bc23"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="base_to_base_14_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="base_link_bc14"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="base_to_base_24_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="base_link_bc24"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="base_1_to_base_3_bc" type="fixed">
+        <parent link="base_link_bc1"/>
+        <child link="base_link_bc3"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="base_to_seat" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="seat"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="seat_to_back" type="fixed">
+        <parent link="seat"/>
+        <child link="back"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <link name="leg_0_bc">
+        <visual>
+            <geometry>
+		<box size="0.04 0.04 0.33" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.24 0.26 0.21"/>
+            <material name="brown">
+                <color rgba="0.85 0.85 0.70 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="wheel_0_bc">
+        <visual>
+	    <geometry>
+                <sphere radius="0.036"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.24 0.26 0.018"/>
+            <material name="grey3">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="base_to_leg_0_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="leg_0_bc"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="0 0 0"/>
+    </joint>
+
+    <joint name="leg_0_bc_to_wheel_0_bc" type="fixed">
+        <parent link="leg_0_bc"/>
+        <child link="wheel_0_bc"/>     
+        <origin xyz="0 0 0"/>
+        <axis xyz="0 0 0"/>
+    </joint>
+    
+    <link name="leg_1_bc">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.33" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.24 -0.26 0.21"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+
+    <link name="wheel_1_bc">
+        <visual>
+            <geometry>
+                <sphere radius="0.036"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.24 -0.26 0.018"/>
+            <material name="grey3"/>
+        </visual>
+    </link>
+
+    <joint name="base_to_leg_1_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="leg_1_bc"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="leg_1_bc_to_wheel_1_bc" type="fixed">
+        <parent link="leg_1_bc"/>
+        <child link="wheel_1_bc"/>     
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+    
+    <link name="leg_2_bc">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.60" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.24 0.26 0.35"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+
+    <link name="wheel_2_bc">
+        <visual>
+            <geometry>
+                <sphere radius="0.036"/>
+            </geometry>
+            <origin rpy="1.5707963 0 0" xyz="0.24 0.26 0.018"/>
+            <material name="grey3"/>
+        </visual>
+    </link>
+
+    <joint name="base_to_leg_2_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="leg_2_bc"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="leg_2_bc_to_wheel_2_bc" type="fixed">
+        <parent link="leg_2_bc"/>
+        <child link="wheel_2_bc"/>     
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+    
+    <link name="leg_3_bc">
+        <visual>
+            <geometry>
+                <box size="0.04 0.04 0.60" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.24 -0.26 0.35"/>
+            <material name="brown"/>
+        </visual>
+    </link>
+
+    <link name="wheel_3_bc">
+        <visual>
+            <geometry>
+                <sphere radius="0.036"/>
+            </geometry>
+            <origin rpy="1.5707963 0 0" xyz="0.24 -0.26 0.018"/>
+            <material name="grey3"/>
+        </visual>
+    </link>
+
+    <joint name="base_to_leg_3_bc" type="fixed">
+        <parent link="base_link_bc"/>
+        <child link="leg_3_bc"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="leg_3_bc_to_wheel_3_bc" type="fixed">
+        <parent link="leg_3_bc"/>
+        <child link="wheel_3_bc"/>     
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+    
+    
+  </robot>

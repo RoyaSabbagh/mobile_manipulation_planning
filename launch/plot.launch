@@ -1,0 +1,41 @@
+<!-- launch.launch -->
+
+<launch>
+
+  <arg name="model" default="$(find pam)/rviz/robot.urdf"/>
+  #<arg name="rvizconfig" default="$(find pam)/rviz/rviz.rviz" />
+  <arg name="gui" default="true" />
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+  <group ns="PAM">
+  <param name="/PAM/robot_description" command="$(find xacro)/xacro --inorder $(find pam)/rviz/robot.urdf" />
+  <include file="$(find pam)/rviz/visual.launch" />
+  </group>
+  
+  <node name="robot_state_publisher1" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/PAM/joint_states"/>
+    <remap from="robot_description" to="/PAM/robot_description"/>
+  </node>
+  
+  <!-- <node name="joint_state_publisher1" pkg="joint_state_publisher" type="joint_state_publisher" >
+    <remap from="joint_states" to="/PAM/joint_states"/>
+    <remap from="robot_description" to="/PAM/robot_description"/>
+  </node> -->
+  
+  <group ns="Walker">
+  <param name="/Walker/robot_description" command="$(find xacro)/xacro --inorder $(find pam)/rviz/walker.urdf" />
+  </group>
+  
+  <node name="robot_state_publisher2" pkg="robot_state_publisher" type="state_publisher" >
+    <remap from="joint_states" to="/PAM/joint_states"/>
+    <remap from="robot_description" to="/PAM/robot_description"/>
+  </node>
+  
+  <!-- <node name="joint_state_publisher2" pkg="joint_state_publisher" type="joint_state_publisher" >
+    <remap from="joint_states" to="/PAM/joint_states"/>
+    <remap from="robot_description" to="/PAM/robot_description"/>
+  </node> -->
+
+</launch>

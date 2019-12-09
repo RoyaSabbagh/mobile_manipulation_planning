@@ -1,0 +1,189 @@
+<robot name="walker_goal">
+    <link name="base_link_wg">
+        <visual>
+            <geometry>
+                <cylinder length="0.56" radius="0.015"/>
+            </geometry>
+            <origin rpy="1.57079633 0 0" xyz="0.2 0 0.84"/>
+            <material name="gray">
+                <color rgba="0.25 0.25 0.25 0.5"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="base_link_w1g">
+        <visual>
+            <geometry>
+                <cylinder length="0.36" radius="0.015"/>
+            </geometry>
+            <origin rpy="0 1.57079633 0" xyz="0 0.28 0.84"/>
+            <material name="gray"/>
+        </visual>
+    </link>
+
+    <link name="base_link_w2g">
+        <visual>
+            <geometry>
+                <cylinder length="0.36" radius="0.015"/>
+            </geometry>
+            <origin rpy="0 1.57079633 0" xyz="0 -0.28 0.84"/>
+            <material name="gray"/>
+        </visual>
+    </link>
+
+    <joint name="base_to_base_1g" type="fixed">
+        <parent link="base_link_wg"/>
+        <child link="base_link_w1g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="base_to_base_2g" type="fixed">
+        <parent link="base_link_wg"/>
+        <child link="base_link_w2g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <link name="leg_0g">
+        <visual>
+            <geometry>
+                <cylinder length="0.76" radius="0.015"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.18 0.28 0.45"/>
+            <material name="grey2">
+                <color rgba="0.85 0.85 0.70 0.8"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="wheel_0g">
+        <visual>
+            <geometry>
+                <sphere radius="0.038"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.18 0.28 0.038"/>
+            <material name="grey3">
+                <color rgba="0.1 0.1 0.1 0.8"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="base_to_leg_0g" type="fixed">
+        <parent link="base_link_wg"/>
+        <child link="leg_0g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="0 0 0"/>
+    </joint>
+
+    <joint name="leg_0_to_wheel_0g" type="fixed">
+        <parent link="leg_0g"/>
+        <child link="wheel_0g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="0 0 0"/>
+    </joint>
+
+    <link name="leg_1g">
+        <visual>
+            <geometry>
+                <cylinder length="0.76" radius="0.015"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.18 -0.28 0.45"/>
+            <material name="grey2"/>
+        </visual>
+    </link>
+
+    <link name="wheel_1g">
+        <visual>
+            <geometry>
+                <sphere radius="0.038"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.18 -0.28 0.038"/>
+            <material name="grey3"/>
+        </visual>
+    </link>
+
+    <joint name="base_to_leg_1g" type="fixed">
+        <parent link="base_link_wg"/>
+        <child link="leg_1g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="leg_1_to_wheel_1g" type="fixed">
+        <parent link="leg_1g"/>
+        <child link="wheel_1g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <link name="leg_2g">
+        <visual>
+            <geometry>
+                <cylinder length="0.76" radius="0.015"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.18 0.28 0.45"/>
+            <material name="grey2"/>
+        </visual>
+    </link>
+
+    <link name="wheel_2g">
+        <visual>
+            <geometry>
+                <sphere radius="0.038"/>
+            </geometry>
+            <origin rpy="1.5707963 0 0" xyz="0.18 0.28 0.038"/>
+            <material name="grey3"/>
+        </visual>
+    </link>
+
+    <joint name="base_to_leg_2g" type="fixed">
+        <parent link="base_link_wg"/>
+        <child link="leg_2g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="leg_2_to_wheel_2g" type="fixed">
+        <parent link="leg_2g"/>
+        <child link="wheel_2g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <link name="leg_3g">
+        <visual>
+            <geometry>
+                <cylinder length="0.76" radius="0.015"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.18 -0.28 0.45"/>
+            <material name="grey2"/>
+        </visual>
+    </link>
+
+    <link name="wheel_3g">
+        <visual>
+            <geometry>
+                <sphere radius="0.038"/>
+            </geometry>
+            <origin rpy="1.5707963 0 0" xyz="0.18 -0.28 0.038"/>
+            <material name="grey3"/>
+        </visual>
+    </link>
+
+    <joint name="base_to_leg_3g" type="fixed">
+        <parent link="base_link_wg"/>
+        <child link="leg_3g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="leg_3_to_wheel_3g" type="fixed">
+        <parent link="leg_3g"/>
+        <child link="wheel_3g"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+    </joint>
+
+
+  </robot>

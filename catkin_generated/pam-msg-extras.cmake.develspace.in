@@ -1,0 +1,2 @@
+set(pam_MESSAGE_FILES "/home/roya/catkin_ws/src/pam_manipulation_planning/msg/Roomba_cmd_vel.msg;/home/roya/catkin_ws/src/pam_manipulation_planning/msg/Gripper_mode.msg;/home/roya/catkin_ws/src/pam_manipulation_planning/msg/JoyStick_cmd.msg;/home/roya/catkin_ws/src/pam_manipulation_planning/msg/feedback.msg;/home/roya/catkin_ws/src/pam_manipulation_planning/msg/state.msg;/home/roya/catkin_ws/src/pam_manipulation_planning/msg/force_reading.msg;/home/roya/catkin_ws/src/pam_manipulation_planning/msg/controlInput.msg")
+set(pam_SERVICE_FILES "")

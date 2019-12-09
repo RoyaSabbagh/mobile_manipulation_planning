@@ -1,0 +1,9 @@
+state walker_state
+state PAM_state
+state obs_state
+state bed_state
+state blue_chair_state
+state gray_chair_state
+state cart_state
+state walker_goal
+float64 force
