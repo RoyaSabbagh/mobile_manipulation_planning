@@ -1,4 +1,4 @@
-# pam_manipulation_planning
+# manipulation_planning
 
 This is a package for motion and manipulation planning for a mobile robot to deliver legged objects.
 
