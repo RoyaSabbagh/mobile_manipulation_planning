@@ -1,8 +1,9 @@
 # mobile_manipulation_planning
 
-This is a ROS package that represents a MPC and optimization-based motion and manipulation planning for a mobile robot to deliver legged objects.
-
+This is a ROS package that represents a MPC and optimization-based motion and manipulation planning for a mobile robot to deliver legged objects. 
 It is authored by [Roya Sabbagh Novin](https://sites.google.com/view/roya-sn), [Amir Yazdani](https://amir-yazdani.github.io/), [Andrew Merryweather](https://mech.utah.edu/faculty/andrew-merryweather/), and [Tucker Hermans](https://robot-learning.cs.utah.edu/thermans) from Utah Robotics Center, University of Utah.
+
+More information about the paper and the method can be found in the [paper website](https://sites.google.com/view/mobile-manipulation-planning) and a PDF version is available at the [arXiv pape]().
         
         
    [![Sammary](http://img.youtube.com/vi/mw9qBr66bVQ/0.jpg)](http://www.youtube.com/watch?v=mw9qBr66bVQ "Summary")
