@@ -61,36 +61,36 @@ More information about the paper and the method can be found in the [paper websi
       [![physical experiment-walker](http://img.youtube.com/vi/RrlDCtD12uI/0.jpg)](http://www.youtube.com/watch?v=RrlDCtD12uI "physical experiment-walker")
 
  
-### Dependencies ###
+### Dependencies 
 
   - **Gurobi optimization package**
     Install Gurobi for ubuntu using this [link](https://www.gurobi.com/documentation/5.6/quickstart/installation_linux.html)
 
-### Installation ###
+### Installation
 1. Make sure you have ROS-kinetic installed and your catkin workspace is generated
 2. Clone the package in your catkin workspace
 3. Make/build your catkin workspace
 4. Enjoy!
 
 
-### How to set up and run ###
+### How to set up and run
 1. Set a simulation example in "Examples_sim.py" or choose one from the available ones
 **Hint**: Running real experiments requiers the lab setup as described in the paper
 2. Assign the example number in "main_simulation.py"
 3. Run "launch_simulation.launch"
 4. Run "rviz.launch" for visualization in rviz
 
-## Citation
+### Citation
 Please cite these papers in your publications if it helps your research.
 
-   @inproceedings{Sabbaghnovin2018dynamic,
-      title={Dynamic Model Learning and Manipulation Planning for Objects in Hospitals using a Patient Assistant Mobile (PAM) Robot},
-      author={Sabbagh Novin, Roya and Yazdani, Amir and Hermans, Tucker and Merryweather, Andrew},
-      booktitle={2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-      pages={1--7},
-      year={2018},
-      organization={IEEE}
-   }
+        @inproceedings{Sabbaghnovin2018dynamic,
+        title={Dynamic Model Learning and Manipulation Planning for Objects in Hospitals using a Patient Assistant Mobile (PAM) Robot},
+        author={Sabbagh Novin, Roya and Yazdani, Amir and Hermans, Tucker and Merryweather, Andrew},
+        booktitle={2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+        pages={1--7},
+        year={2018},
+        organization={IEEE}
+        }
 
    
 Links to the papers:
