@@ -1,4 +1,4 @@
-# mpc-based_manipulation_planning
+# mobile_manipulation_planning
 
 This is a ROS package that represents a MPC and optimization-based motion and manipulation planning for a mobile robot to deliver legged objects.
 
