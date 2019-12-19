@@ -80,5 +80,20 @@ More information about the paper and the method can be found in the [paper websi
 3. Run "launch_simulation.launch"
 4. Run "rviz.launch" for visualization in rviz
 
+## Citation
+Please cite these papers in your publications if it helps your research.
 
+   @inproceedings{Sabbaghnovin2018dynamic,
+      title={Dynamic Model Learning and Manipulation Planning for Objects in Hospitals using a Patient Assistant Mobile (PAM) Robot},
+      author={Sabbagh Novin, Roya and Yazdani, Amir and Hermans, Tucker and Merryweather, Andrew},
+      booktitle={2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+      pages={1--7},
+      year={2018},
+      organization={IEEE}
+   }
+
+   
+Links to the papers:
+
+- [Dynamic Model Learning and Manipulation Planning for Objects in Hospitals using a Patient Assistant Mobile (PAM) Robot](https://arxiv.org/abs/1812.08008)
 
